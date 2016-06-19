@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.show_sql">false</property>
+		<property name="hibernate.use_sql_comments">false</property>
+		<property name="hibernate.format_sql">false</property>
+		<!-- <property name="hibernate.use_outer_join">true</property> -->
+		<property name="hbm2ddl.auto">update</property>
+		<property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
+		<property name="hibernate.jdbc_use_scrollable_resultset">true</property>
+		<property name="hibernate.jdbc.fetch_size">150</property>
+		<property name="hibernate.jdbc.batch_size">50</property>
+		<property name="hibernate.jdbc.use_get_generated_keys">true</property>
+		<property name="hibernate.bytecode.use_reflection_optimizer">true</property>
+		<property name="hibernate.query.substitutions">true 1, false 0</property>
+		<property name="hibernate.connection.zeroDateTimeBehavior">convertToNull</property>
+		<property name="hibernate.connection.charSet">UTF-8</property>
+		<property name="hibernate.default_batch_fetch_size">50</property>
+ 		
+ 		 <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>    
+        <!-- For singleton factory -->
+     <!--  <property name="hibernate.cachSe.region.factory_class">org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory</property> --> 
+     
+         <!-- enable second level cache and query cache -->
+         <property name="hibernate.cache.use_second_level_cache">true</property>
+         <property name="hibernate.cache.use_query_cache">true</property>
+       
+        <property name="net.sf.ehcache.configurationResourceName">/ehcache.xml</property>   
+ 		<property name="hibernate.generate_statistics">true</property>
+		<mapping class="com.example.student.model.Student"/>
+		
+	</session-factory>
+	
+	
+	
+</hibernate-configuration>
+ 
+ 
